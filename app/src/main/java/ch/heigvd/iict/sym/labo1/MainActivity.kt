@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -76,6 +77,14 @@ class MainActivity : AppCompatActivity() {
             }
 
             //TODO à compléter...
+            if(!emailInput!!.contains("@")){
+
+                Log.d(TAG, "L'email ne contient pas de @")
+
+                Toast.makeText(this, R.string.main_incorrect_email, Toast.LENGTH_SHORT).show()
+
+                return@setOnClickListener
+            }
         }
     }
 

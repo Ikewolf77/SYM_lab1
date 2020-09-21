@@ -7,4 +7,5 @@
     <string name="main_validate_btn">Confirmer</string>
     <string name="main_create_account">Nouveau compte</string>
     <string name="main_password_hint">Mot de passe</string>
+    <string name="main_incorrect_email">E-mail incorrect</string>
 </resources>
