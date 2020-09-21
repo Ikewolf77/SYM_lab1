@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -77,14 +78,29 @@ class MainActivity : AppCompatActivity() {
             }
 
             //TODO à compléter...
+            //vérification d'un email correct, par exemple @ qui manque
             if(!emailInput!!.contains("@")){
-
                 Log.d(TAG, "L'email ne contient pas de @")
-
+                //affichage du Toast
                 Toast.makeText(this, R.string.main_incorrect_email, Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if(!credentials.contains(Pair(emailInput,passwordInput))){
+
+                //construction de la boite de dialogue
+                val builder = AlertDialog.Builder(this)
+                //ajout du message
+                builder.setMessage(R.string.main_incorrect_user)
+                //ajout d'un bouton pour plusoyer
+                builder.setNeutralButton("ok") { _, _ -> }
+                //affichage de la boite à dialogue
+                builder.show()
 
                 return@setOnClickListener
             }
+
+            //nouvelle acitvité
         }
     }
 

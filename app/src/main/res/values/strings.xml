@@ -8,5 +8,6 @@
     <string name="main_email_hint">Your e-mail address</string>
     <string name="main_password_hint">Your password</string>
     <string name="main_incorrect_email">Incorrect e-mail</string>
+    <string name="main_incorrect_user">Wrong user or password</string>
 
 </resources>
