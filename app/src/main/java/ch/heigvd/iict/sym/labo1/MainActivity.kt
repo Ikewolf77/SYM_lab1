@@ -1,5 +1,6 @@
 package ch.heigvd.iict.sym.labo1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -93,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                 //ajout du message
                 builder.setMessage(R.string.main_incorrect_user)
                 //ajout d'un bouton pour plusoyer
-                builder.setNeutralButton("ok") { _, _ -> }
+                builder.setNeutralButton("ok",null)
                 //affichage de la boite à dialogue
                 builder.show()
 
@@ -101,6 +102,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             //nouvelle acitvité
+            val intent = Intent(this, PostLoginActivity::class.java)
+            startActivity(intent)
         }
     }
 
